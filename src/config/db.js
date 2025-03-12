@@ -1,7 +1,8 @@
 const { MongoClient } = require("mongodb");
 
-const uri = `mongodb+srv://<db_username>:<db_password>@cluster0.tl2ww1y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASS}@cluster0.tl2ww1y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
+console.log(uri);
 if (!uri) {
   console.error("❌ MONGO_URI is not set in environment variables!");
   process.exit(1);

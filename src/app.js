@@ -6,6 +6,9 @@ const cors = require("cors");
 
 // Import Routes
 
+// Credential of MongoDB
+user: linkManagementUser;
+pass: linkManagementPass;
 
 // Middlewares
 app.use(cors());

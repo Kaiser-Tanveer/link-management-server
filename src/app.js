@@ -1,15 +1,20 @@
 require("dotenv").config();
+
+const linkRoute = require("./Routes/linkRoute");
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const { connectDB } = require("./config/db");
 
 // Connect to MongoDB Database
-connectDB(); // ✅ Call the function
+connectDB();
 
 // Middlewares
 app.use(cors());
-app.use(express.json());   
+app.use(express.json());
+
+// link adding api 
+app.use("/api/links", linkRoute);
 
 // 🔹 Health Check Route
 app.get("/", (req, res) => {

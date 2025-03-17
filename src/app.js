@@ -5,11 +5,13 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const { connectDB } = require("./config/db");
+const attachClientToRequest = require("./Middlewares/dbMiddleware");
 
 // Connect to MongoDB Database
 connectDB();
 
 // Middlewares
+app.use(attachClientToRequest);
 app.use(cors());
 app.use(express.json());
 

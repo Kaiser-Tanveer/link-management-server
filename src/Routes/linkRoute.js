@@ -4,6 +4,7 @@ const { addLinks } = require("../Controllers/linkController");
 const router = express.Router();
 
 router.post("/add", addLinks);
-router.get("/", addLinks);
+
+router.get("/get", addLinks);
 
 module.exports = router;

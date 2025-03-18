@@ -1,10 +1,10 @@
 const { ObjectId } = require('mongodb');
 
 // Add own Link
-const linkCollection = req.client.db('Link_Management').collection('links');
 const addLinks = async (req, res) => {
     try {
         const linkData = { ...req.body };
+        const linkCollection = req.client.db('Link_Management').collection('links');
         const result = await linkCollection.insertOne(linkData);
         res.status(201).json({ message: `Link added successfully`, data: result });
     } catch (error) {
@@ -16,7 +16,9 @@ const addLinks = async (req, res) => {
 // Get own links 
 const getLinks = async (req, res) => {
     try {
+        const linkCollection = req.client.db('Link_Management').collection('links');
         const result = await linkCollection.find({}).toArray();
+        console.log(result);
         res.status(200).json({ message: `Links fetched successfully`, data: result });
     } catch (error) {
         console.error(`Error fetching links`, error);

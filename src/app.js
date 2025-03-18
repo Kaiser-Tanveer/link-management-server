@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // link adding api 
-app.use("/api/links", linkRoute);
+app.use("/api/links/", linkRoute);
 
 // 🔹 Health Check Route
 app.get("/", (req, res) => {

@@ -8,7 +8,7 @@ router.post("/add", addOwnLinks);
 router.get("/get-links", getOwnLinks);
 
 // Social links routes 
-router.post("/add", addSocialLinks);
+router.post("/addSocial", addSocialLinks);
 // router.get("/get-links", getOwnLinks);
 
 module.exports = router;

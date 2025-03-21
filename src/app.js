@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 app.get("/test-db", async (req, res) => {
     try {
         await connectDB();
-        res.status(200).json({ message: "✅ Successfully connected to MongoDB" });
+        res.status(200).json({ message: "✅ Successfully connected to MongoDB"});
     } catch (error) {
         res.status(500).json({ message: "❌ MongoDB Connection Failed", error: error.message });
     }

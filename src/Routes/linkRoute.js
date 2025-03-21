@@ -1,9 +1,14 @@
 const express = require("express");
-const { addLinks, getLinks } = require("../Controllers/linkController");
+const { addOwnLinks, getOwnLinks, addSocialLinks } = require("../Controllers/linkController");
 
 const router = express.Router();
 
-router.post("/add", addLinks);
-router.get("/get-links", getLinks);
+// Own links routes 
+router.post("/add", addOwnLinks);
+router.get("/get-links", getOwnLinks);
+
+// Social links routes 
+router.post("/add", addSocialLinks);
+// router.get("/get-links", getOwnLinks);
 
 module.exports = router;

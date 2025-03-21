@@ -21,5 +21,4 @@ const connectDB = async () => {
   }
 };
 
-// Exporting the connectDB function and client
 module.exports = { connectDB, client };

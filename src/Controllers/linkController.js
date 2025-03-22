@@ -38,16 +38,16 @@ const addSocialLinks = async (req, res) => {
 };
 
 // Get own links 
-// const getSocialLinks = async (req, res) => {
-//     try {
-//         const linkCollection = req.client.db('Link_Management').collection('links');
-//         const result = await linkCollection.find({}).toArray();
-//         console.log(result);
-//         res.status(200).json({ message: `Links fetched successfully`, data: result });
-//     } catch (error) {
-//         console.error(`Error fetching links`, error);
-//         res.status(500).json({ error: `Failed to fetch link`});
-//     }
-// };
+const getSocialLinks = async (req, res) => {
+    try {
+        const linkCollection = req.client.db('Link_Management').collection('social-links');
+        const result = await linkCollection.find({}).toArray();
+        console.log(result);
+        res.status(200).json({ message: `Links fetched successfully`, data: result });
+    } catch (error) {
+        console.error(`Error fetching links`, error);
+        res.status(500).json({ error: `Failed to fetch link`});
+    }
+};
 
-module.exports = { addOwnLinks, getOwnLinks, addSocialLinks };
+module.exports = { addOwnLinks, getOwnLinks, addSocialLinks, getSocialLinks };
